@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Details — SkyVoyage</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/flight-details.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="flex items-center gap-xl">
+      <a href="index.html" class="navbar-brand">SkyVoyage</a>
+      <nav class="navbar-links">
+        <a href="index.html">Flights</a>
+        <a href="search.html">Search</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#">Help</a>
+      </nav>
+    </div>
+    <div class="navbar-actions">
+      <a href="login.html" class="btn btn-ghost">Sign In</a>
+      <a href="register.html" class="btn btn-primary">Get Started</a>
+    </div>
+    <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="page-content">
+    <div class="flight-detail-hero">
+      <div class="container">
+        <a href="search.html" class="flex items-center gap-sm mb-md" style="color:rgba(255,255,255,0.7);">
+          <span class="material-symbols-outlined icon-sm">arrow_back</span> Back to Search Results
+        </a>
+        <h1 class="text-h1">Flight Details</h1>
+      </div>
+    </div>
+    <div class="container" style="padding-bottom:var(--space-2xl);">
+      <div class="flight-detail-card" id="flight-detail">
+        <div class="loading-overlay" id="detail-loading">
+          <div class="spinner"></div>
+          <p>Loading flight details...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container-lg">
+      <div class="footer-grid">
+        <div><span class="footer-brand">SkyVoyage</span><p class="footer-desc">Your trusted partner for effortless global travel.</p></div>
+        <div><h5 class="footer-title">Company</h5><div class="footer-links"><a href="#">About Us</a></div></div>
+        <div><h5 class="footer-title">Support</h5><div class="footer-links"><a href="#">Help Center</a></div></div>
+        <div><p class="footer-copyright">© 2026 SkyVoyage. All rights reserved.</p></div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/pages/flight-details.js"></script>
+</body>
+</html>
