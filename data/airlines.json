@@ -1,0 +1,12 @@
+[
+  { "id": "AI", "name": "Air India", "logo": "✈️", "rating": 4.2 },
+  { "id": "EK", "name": "Emirates", "logo": "🛩️", "rating": 4.8 },
+  { "id": "6E", "name": "IndiGo", "logo": "✈️", "rating": 4.0 },
+  { "id": "SG", "name": "SpiceJet", "logo": "✈️", "rating": 3.8 },
+  { "id": "UK", "name": "Vistara", "logo": "✈️", "rating": 4.5 },
+  { "id": "QR", "name": "Qatar Airways", "logo": "🛩️", "rating": 4.7 },
+  { "id": "SQ", "name": "Singapore Airlines", "logo": "🛩️", "rating": 4.9 },
+  { "id": "LH", "name": "Lufthansa", "logo": "🛩️", "rating": 4.3 },
+  { "id": "BA", "name": "British Airways", "logo": "🛩️", "rating": 4.4 },
+  { "id": "TK", "name": "Turkish Airlines", "logo": "🛩️", "rating": 4.3 }
+]
