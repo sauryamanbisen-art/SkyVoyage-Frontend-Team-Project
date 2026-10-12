@@ -28,6 +28,85 @@
         </div>
       </div>
     </div>
+    <!-- Checkout Booking Layout -->
+    <div class="container" style="padding-bottom:var(--space-2xl);">
+      <div class="booking-layout">
+        <!-- Payment Methods & Card Form -->
+        <div class="booking-main">
+          <h2 class="text-h2 text-primary mb-lg">Choose Payment Method</h2>
+          <!-- Payment Method Selector Tabs -->
+          <div class="payment-methods" id="payment-methods">
+            <div class="payment-method active" data-method="card">
+              <span class="material-symbols-outlined">credit_card</span>
+              <span>Credit/Debit Card</span>
+            </div>
+            <div class="payment-method" data-method="upi">
+              <span class="material-symbols-outlined">account_balance</span>
+              <span>UPI</span>
+            </div>
+            <div class="payment-method" data-method="netbanking">
+              <span class="material-symbols-outlined">language</span>
+              <span>Net Banking</span>
+            </div>
+            <div class="payment-method" data-method="wallet">
+              <span class="material-symbols-outlined">account_balance_wallet</span>
+              <span>Wallet</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Payment Form Container -->
+          <div id="payment-form-area">
+            <!-- Card Form (default option) -->
+            <div id="card-form">
+              <div class="passenger-form-grid">
+                <div class="form-group" style="grid-column:span 2;">
+                  <label class="form-label" for="card-number">Card Number</label>
+                  <div class="form-input-icon">
+                    <span class="material-symbols-outlined">credit_card</span>
+                    <input type="text" id="card-number" class="form-input" placeholder="1234 5678 9012 3456" maxlength="19">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="card-expiry">Expiry Date</label>
+                  <input type="text" id="card-expiry" class="form-input" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="card-cvv">CVV</label>
+                  <input type="password" id="card-cvv" class="form-input" placeholder="•••" maxlength="3">
+                </div>
+                <div class="form-group" style="grid-column:span 2;">
+                  <label class="form-label" for="card-name">Cardholder Name</label>
+                  <input type="text" id="card-name" class="form-input" placeholder="Name as on card">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms & Agreement Confirmation -->
+          <div class="flex items-center gap-sm mt-lg mb-lg">
+            <input type="checkbox" id="terms-check" style="width:18px;height:18px;accent-color:var(--color-secondary);">
+            <label for="terms-check" class="text-small">I agree to the <a href="#" class="text-secondary font-semibold">Terms of Service</a> and <a href="#" class="text-secondary font-semibold">Privacy Policy</a></label>
+          </div>
+
+          <!-- Navigation and Submission Controls -->
+          <div class="flex justify-between items-center">
+            <a href="passenger-info.html" class="btn btn-outline"><span class="material-symbols-outlined icon-sm">arrow_back</span> Back</a>
+            <button class="btn btn-accent btn-lg" id="pay-btn" disabled>
+              <span class="material-symbols-outlined icon-sm">lock</span>
+              Pay & Confirm
+            </button>
+          </div>
+        </div>
+
+        <!-- Order Summary Sidebar -->
+        <aside class="booking-sidebar">
+          <div class="booking-summary-card">
+            <div class="booking-summary-title">Order Summary</div>
+            <div id="checkout-summary"><div class="loading-overlay"><div class="spinner"></div></div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
   </main>
   <!-- Page Footer -->
   <footer class="footer"><div class="container-lg"><div class="footer-grid"><div><span class="footer-brand">SkyVoyage</span></div><div><p class="footer-copyright">© 2026 SkyVoyage.</p></div></div></div></footer>
