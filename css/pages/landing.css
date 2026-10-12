@@ -1,6 +1,6 @@
 /* ============================================
    Landing Page Styles
-   Matches the Stitch "SkyVoyage Homepage" design
+   Matches the Stitch "Skynora Homepage" design
    ============================================ */
 
 /* ---- Hero Section ---- */
@@ -373,7 +373,7 @@
 }
 
 
-/* ---- Why SkyVoyage Section ---- */
+/* ---- Why Skynora Section ---- */
 .features-section {
   background: var(--color-surface-container-low);
 }
