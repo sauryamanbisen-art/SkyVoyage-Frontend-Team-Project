@@ -262,3 +262,90 @@ input[type="range"] {
   color: var(--color-primary);
 }
 
+.flight-city-code {
+  font-size: var(--font-caption-size);
+  color: var(--color-on-surface-variant);
+  margin-top: var(--space-xs);
+}
+
+.flight-duration-block {
+  flex: 1;
+  text-align: center;
+}
+
+.flight-duration-line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  justify-content: center;
+  margin-bottom: var(--space-xs);
+}
+
+.flight-duration-line::before,
+.flight-duration-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-outline-variant);
+}
+
+.flight-duration-line .material-symbols-outlined {
+  color: var(--color-secondary);
+  font-size: 20px;
+}
+
+.flight-duration-text {
+  font-size: var(--font-caption-size);
+  color: var(--color-on-surface-variant);
+}
+
+.flight-stops {
+  font-size: var(--font-caption-size);
+  font-weight: 500;
+}
+
+.flight-stops.nonstop {
+  color: var(--color-success);
+}
+
+.flight-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-md);
+}
+
+.flight-amenities {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.flight-amenities .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--color-on-surface-variant);
+}
+
+.flight-seats-left {
+  font-size: var(--font-caption-size);
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+.flight-select-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--font-small-size);
+  transition: opacity var(--transition-normal);
+}
+
+.flight-select-btn:hover {
+  opacity: 0.9;
+}
+
+
