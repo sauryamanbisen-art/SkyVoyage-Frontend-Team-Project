@@ -14,3 +14,24 @@
 .seat-legend-box.occupied { background: var(--color-surface-container-high); }
 .seat-legend-box.business { background: rgba(255, 107, 53, 0.15); border-color: var(--color-accent); }
 
+/* Seat Grid */
+.seat-grid { max-width: 360px; margin: 0 auto; }
+.seat-row { display: grid; grid-template-columns: 30px repeat(3, 1fr) 24px repeat(3, 1fr); gap: 6px; margin-bottom: 6px; align-items: center; }
+.seat-row-number { font-size: var(--font-caption-size); color: var(--color-on-surface-variant); text-align: center; font-weight: 500; }
+.seat-aisle { /* empty space for aisle */ }
+.seat-column-headers { display: grid; grid-template-columns: 30px repeat(3, 1fr) 24px repeat(3, 1fr); gap: 6px; margin-bottom: var(--space-sm); }
+.seat-col-letter { text-align: center; font-size: var(--font-caption-size); font-weight: 600; color: var(--color-on-surface-variant); }
+
+.seat {
+  width: 100%; aspect-ratio: 1; border-radius: 6px 6px 8px 8px; border: 1.5px solid var(--color-border);
+  display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500;
+  cursor: pointer; transition: all var(--transition-fast); background: white; color: var(--color-on-surface-variant);
+  position: relative;
+}
+.seat:hover:not(.occupied) { border-color: var(--color-secondary); background: rgba(0, 210, 253, 0.05); }
+.seat.selected { background: var(--color-secondary-container); border-color: var(--color-secondary); color: white; font-weight: 700; }
+.seat.occupied { background: var(--color-surface-container-high); cursor: not-allowed; opacity: 0.5; }
+.seat.business { border-color: rgba(255, 107, 53, 0.3); }
+.seat.business.selected { background: var(--color-accent); border-color: var(--color-accent); color: white; }
+.seat-class-divider { grid-column: 1 / -1; text-align: center; font-size: var(--font-caption-size); font-weight: 600; color: var(--color-on-surface-variant); padding: var(--space-sm) 0; text-transform: uppercase; letter-spacing: 0.1em; border-top: 1px dashed var(--color-border); margin-top: var(--space-sm); }
+
