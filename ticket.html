@@ -13,5 +13,25 @@
     <div class="navbar-actions"><a href="login.html" class="btn btn-ghost">Sign In</a><a href="register.html" class="btn btn-primary">Get Started</a></div>
     <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </header>
+  <main class="page-content">
+    <div class="container" style="padding:var(--space-2xl) 0;">
+      <div class="text-center mb-xl">
+        <div class="success-icon"><span class="material-symbols-outlined icon-filled">check_circle</span></div>
+        <h1 class="text-h1 text-primary">Booking Confirmed!</h1>
+        <p class="text-muted mt-sm">Your e-ticket has been generated. Check your email for a copy.</p>
+      </div>
+      <div class="ticket-wrapper" id="ticket-wrapper">
+        <div class="loading-overlay"><div class="spinner"></div><p>Loading ticket...</p></div>
+      </div>
+      <div class="text-center mt-xl flex justify-center gap-md" style="flex-wrap:wrap;">
+        <button class="btn btn-primary" onclick="window.print()"><span class="material-symbols-outlined icon-sm">print</span> Print Ticket</button>
+        <a href="dashboard.html" class="btn btn-outline"><span class="material-symbols-outlined icon-sm">dashboard</span> My Dashboard</a>
+        <a href="index.html" class="btn btn-ghost">Book Another Flight</a>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"><div class="container-lg"><div class="footer-grid"><div><span class="footer-brand">SkyVoyage</span></div><div><p class="footer-copyright">© 2026 SkyVoyage.</p></div></div></div></footer>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/pages/ticket.js"></script>
 </body>
 </html>
