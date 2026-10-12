@@ -51,6 +51,31 @@
               <div class="admin-stat-label">Active Flights</div>
             </div>
           </div>
+          <!-- Revenue Analytics Visual Placeholder -->
+          <div class="admin-chart-placeholder">
+            <span class="material-symbols-outlined">bar_chart</span>
+            <h3 class="text-h3 text-primary mb-sm">Revenue Analytics</h3>
+            <p class="text-small">Chart visualization would display here in production using a library like Chart.js</p>
+          </div>
+          <!-- Recent Bookings Activity Table -->
+          <h3 class="text-h3 text-primary mb-md">Recent Bookings</h3>
+          <div class="table-wrapper" id="admin-recent-bookings">
+            <table class="table"><thead><tr><th>Booking ID</th><th>Flight</th><th>Route</th><th>Passengers</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody id="recent-bookings-body"></tbody></table>
+          </div>
+        </div>
+
+        <!-- Flight Management Section -->
+        <div class="admin-section" id="section-flights">
+          <h1 class="admin-page-title">Flight Management</h1>
+          <div class="admin-toolbar">
+            <div class="admin-search"><span class="material-symbols-outlined">search</span><input type="text" placeholder="Search flights..." id="flight-search"></div>
+            <button class="btn btn-primary" id="add-flight-btn"><span class="material-symbols-outlined icon-sm">add</span> Add Flight</button>
+          </div>
+          <div class="table-wrapper" id="flights-table-wrapper">
+            <table class="table"><thead><tr><th>Flight No.</th><th>Airline</th><th>Route</th><th>Time</th><th>Duration</th><th>Price (Eco)</th><th>Seats</th><th>Actions</th></tr></thead>
+            <tbody id="flights-table-body"></tbody></table>
+          </div>
         </div>
       </div>
     </div>
