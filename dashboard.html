@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard — SkyVoyage</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/auth-dashboard.css">
+</head>
+<body>
+  <!-- Global Navigation Header -->
+  <header class="navbar">
+    <div class="flex items-center gap-xl"><a href="index.html" class="navbar-brand">SkyVoyage</a><nav class="navbar-links"><a href="index.html">Flights</a><a href="search.html">Search</a><a href="dashboard.html" class="active">Dashboard</a><a href="#">Help</a></nav></div>
+    <div class="navbar-actions"><a href="login.html" class="btn btn-ghost">Sign In</a><a href="register.html" class="btn btn-primary">Get Started</a></div>
+    <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </header>
+  <main class="page-content">
+    <!-- User Welcome Greeting Banner -->
+    <div class="dash-header">
+      <div class="container">
+        <h1 class="text-h1" id="dash-greeting">Welcome back!</h1>
+        <p class="text-small mt-sm" style="opacity:0.7;" id="dash-subtitle">Manage your trips and bookings</p>
+      </div>
+    </div>
+  </main>
+  <!-- Site Footer -->
+  <footer class="footer"><div class="container-lg"><div class="footer-grid"><div><span class="footer-brand">SkyVoyage</span></div><div><p class="footer-copyright">© 2026 SkyVoyage.</p></div></div></div></footer>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/pages/dashboard.js"></script>
+</body>
+</html>
