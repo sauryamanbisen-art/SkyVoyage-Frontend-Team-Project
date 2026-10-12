@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — SkyVoyage</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/booking.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="flex items-center gap-xl"><a href="index.html" class="navbar-brand">SkyVoyage</a><nav class="navbar-links"><a href="index.html">Flights</a><a href="search.html">Search</a><a href="dashboard.html">Dashboard</a><a href="#">Help</a></nav></div>
+    <div class="navbar-actions"><a href="login.html" class="btn btn-ghost">Sign In</a><a href="register.html" class="btn btn-primary">Get Started</a></div>
+    <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </header>
+  <main class="page-content">
+    <!-- Booking Progress Stepper Header -->
+    <div class="booking-flow-header">
+      <div class="container">
+        <h1 class="text-h1">Payment</h1>
+        <div class="booking-steps">
+          <div class="booking-step completed"><span class="step-number">✓</span>Search</div><span class="step-divider"></span>
+          <div class="booking-step completed"><span class="step-number">✓</span>Seats</div><span class="step-divider"></span>
+          <div class="booking-step completed"><span class="step-number">✓</span>Passengers</div><span class="step-divider"></span>
+          <div class="booking-step active"><span class="step-number">4</span>Payment</div><span class="step-divider"></span>
+          <div class="booking-step"><span class="step-number">5</span>Confirmation</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Page Footer -->
+  <footer class="footer"><div class="container-lg"><div class="footer-grid"><div><span class="footer-brand">SkyVoyage</span></div><div><p class="footer-copyright">© 2026 SkyVoyage.</p></div></div></div></footer>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/pages/checkout.js"></script>
+</body>
+</html>
