@@ -373,3 +373,53 @@
 }
 
 
+/* ---- Why SkyVoyage Section ---- */
+.features-section {
+  background: var(--color-surface-container-low);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.feature-card {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-subtle);
+  transition: box-shadow var(--transition-slow);
+}
+
+.feature-card:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+}
+
+.feature-icon .material-symbols-outlined {
+  font-size: 32px;
+}
+
+.feature-card h4 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.feature-card p {
+  color: var(--color-on-surface-variant);
+  font-size: var(--font-small-size);
+}
+
+
