@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — SkyVoyage</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/admin.css">
+</head>
+<body>
+  <!-- Admin Navigation Header -->
+  <header class="navbar">
+    <div class="flex items-center gap-xl"><a href="index.html" class="navbar-brand">SkyVoyage</a><nav class="navbar-links"><a href="index.html">Flights</a><a href="dashboard.html">Dashboard</a><a href="admin.html" class="active">Admin</a></nav></div>
+    <div class="navbar-actions"><a href="login.html" class="btn btn-ghost">Sign In</a></div>
+    <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </header>
+  <main class="page-content">
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-title">Navigation</div>
+        <div class="admin-nav-item active" data-section="overview"><span class="material-symbols-outlined">dashboard</span> Overview</div>
+        <div class="admin-nav-item" data-section="flights"><span class="material-symbols-outlined">flight</span> Flights</div>
+        <div class="admin-nav-item" data-section="bookings"><span class="material-symbols-outlined">confirmation_number</span> Bookings</div>
+        <div class="admin-nav-item" data-section="users"><span class="material-symbols-outlined">group</span> Users</div>
+        <div class="admin-sidebar-title mt-xl">Settings</div>
+        <div class="admin-nav-item" data-section="overview"><span class="material-symbols-outlined">settings</span> General</div>
+      </aside>
+      <!-- Admin Main Content Area -->
+      <div class="admin-main">
+        <!-- Overview Section & Metric KPIs -->
+        <div class="admin-section active" id="section-overview">
+          <h1 class="admin-page-title">Admin Overview</h1>
+          <div class="admin-stats-row" id="admin-stats">
+            <div class="admin-stat">
+              <div class="admin-stat-value text-primary" id="admin-total-bookings">0</div>
+              <div class="admin-stat-label">Total Bookings</div>
+              <div class="admin-stat-change text-success"><span class="material-symbols-outlined icon-sm">trending_up</span> +12% this month</div>
+            </div>
+            <div class="admin-stat">
+              <div class="admin-stat-value text-accent" id="admin-revenue">₹0</div>
+              <div class="admin-stat-label">Total Revenue</div>
+              <div class="admin-stat-change text-success"><span class="material-symbols-outlined icon-sm">trending_up</span> +8% this month</div>
+            </div>
+            <div class="admin-stat">
+              <div class="admin-stat-value text-secondary" id="admin-total-users">0</div>
+              <div class="admin-stat-label">Registered Users</div>
+            </div>
+            <div class="admin-stat">
+              <div class="admin-stat-value text-success" id="admin-active">0</div>
+              <div class="admin-stat-label">Active Flights</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/pages/admin.js"></script>
+</body>
+</html>
