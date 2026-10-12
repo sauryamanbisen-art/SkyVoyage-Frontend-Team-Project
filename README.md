@@ -1,10 +1,10 @@
-# SkyVoyage — Frontend Team Project
+# Skynora — Frontend Team Project
 
 [![Status](https://img.shields.io/badge/Status-In%20Development%20(45%25)-orange)](#project-status)
 [![Tech Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20Vanilla%20CSS3%20%7C%20ES6%2B%20JS-blue)](#technology-stack)
 [![PRD](https://img.shields.io/badge/Documentation-PRD%20(PDF)-red)](PRD.pdf)
 
-**SkyVoyage** is a modern, responsive, client-side flight booking platform designed to deliver an end-to-end travel booking, passenger self-service, and flight management experience.
+**Skynora** is a modern, responsive, client-side flight booking platform designed to deliver an end-to-end travel booking, passenger self-service, and flight management experience.
 
 Built with **vanilla web technologies (HTML5, Modern CSS3 with Design Tokens, and ES6+ Modules)**, the architecture guarantees blazing-fast load times, zero external runtime dependencies, and maintainable, modular code.
 
@@ -14,7 +14,7 @@ Built with **vanilla web technologies (HTML5, Modern CSS3 with Design Tokens, an
 
 For full architectural blueprints, entity models, page-by-page functional specs, and sprint roadmaps, refer to the complete Product Requirements Document:
 
-👉 **[Download / View the SkyVoyage PRD (PRD.pdf)](PRD.pdf)**
+👉 **[Download / View the Skynora PRD (PRD.pdf)](PRD.pdf)**
 
 ---
 
@@ -34,7 +34,7 @@ For full architectural blueprints, entity models, page-by-page functional specs,
 ## 🗂️ Project Structure
 
 ```text
-SkyVoyage-Frontend-Team-Project/
+Skynora-Frontend-Team-Project/
 ├── PRD.pdf                         # Full Product Requirements Document (PDF)
 ├── README.md                       # Project documentation
 ├── index.html                      # Landing page with flight search widget
