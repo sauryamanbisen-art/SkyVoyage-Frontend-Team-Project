@@ -1,0 +1,16 @@
+/* Seat Selection Page */
+.seat-page-header { background: var(--color-primary); color: white; padding: var(--space-xl) 0; }
+.seat-layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--space-xl); margin-top: var(--space-xl); }
+
+/* Seat Map */
+.seat-map-wrapper { background: white; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-xl); }
+.seat-map-header { text-align: center; margin-bottom: var(--space-lg); }
+.seat-map-aircraft { font-size: var(--font-h3-size); font-weight: 600; color: var(--color-primary); }
+.seat-legend { display: flex; justify-content: center; gap: var(--space-lg); margin-top: var(--space-md); flex-wrap: wrap; }
+.seat-legend-item { display: flex; align-items: center; gap: var(--space-xs); font-size: var(--font-caption-size); color: var(--color-on-surface-variant); }
+.seat-legend-box { width: 20px; height: 20px; border-radius: 4px; border: 1px solid var(--color-border); }
+.seat-legend-box.available { background: white; }
+.seat-legend-box.selected { background: var(--color-secondary-container); border-color: var(--color-secondary); }
+.seat-legend-box.occupied { background: var(--color-surface-container-high); }
+.seat-legend-box.business { background: rgba(255, 107, 53, 0.15); border-color: var(--color-accent); }
+
