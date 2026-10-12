@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — SkyVoyage</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/admin.css">
+</head>
+<body>
+  <!-- Admin Navigation Header -->
+  <header class="navbar">
+    <div class="flex items-center gap-xl"><a href="index.html" class="navbar-brand">SkyVoyage</a><nav class="navbar-links"><a href="index.html">Flights</a><a href="dashboard.html">Dashboard</a><a href="admin.html" class="active">Admin</a></nav></div>
+    <div class="navbar-actions"><a href="login.html" class="btn btn-ghost">Sign In</a></div>
+    <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </header>
+  <main class="page-content">
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-title">Navigation</div>
+        <div class="admin-nav-item active" data-section="overview"><span class="material-symbols-outlined">dashboard</span> Overview</div>
+        <div class="admin-nav-item" data-section="flights"><span class="material-symbols-outlined">flight</span> Flights</div>
+        <div class="admin-nav-item" data-section="bookings"><span class="material-symbols-outlined">confirmation_number</span> Bookings</div>
+        <div class="admin-nav-item" data-section="users"><span class="material-symbols-outlined">group</span> Users</div>
+        <div class="admin-sidebar-title mt-xl">Settings</div>
+        <div class="admin-nav-item" data-section="overview"><span class="material-symbols-outlined">settings</span> General</div>
+      </aside>
+      <!-- Admin Main Content Area -->
+      <div class="admin-main">
+        <!-- Overview Section & Metric KPIs -->
+        <div class="admin-section active" id="section-overview">
+          <h1 class="admin-page-title">Admin Overview</h1>
+          <div class="admin-stats-row" id="admin-stats">
+            <div class="admin-stat">
+              <div class="admin-stat-value text-primary" id="admin-total-bookings">0</div>
+              <div class="admin-stat-label">Total Bookings</div>
+              <div class="admin-stat-change text-success"><span class="material-symbols-outlined icon-sm">trending_up</span> +12% this month</div>
+            </div>
+            <div class="admin-stat">
+              <div class="admin-stat-value text-accent" id="admin-revenue">₹0</div>
+              <div class="admin-stat-label">Total Revenue</div>
+              <div class="admin-stat-change text-success"><span class="material-symbols-outlined icon-sm">trending_up</span> +8% this month</div>
+            </div>
+            <div class="admin-stat">
+              <div class="admin-stat-value text-secondary" id="admin-total-users">0</div>
+              <div class="admin-stat-label">Registered Users</div>
+            </div>
+            <div class="admin-stat">
+              <div class="admin-stat-value text-success" id="admin-active">0</div>
+              <div class="admin-stat-label">Active Flights</div>
+            </div>
+          </div>
+          <!-- Revenue Analytics Visual Placeholder -->
+          <div class="admin-chart-placeholder">
+            <span class="material-symbols-outlined">bar_chart</span>
+            <h3 class="text-h3 text-primary mb-sm">Revenue Analytics</h3>
+            <p class="text-small">Chart visualization would display here in production using a library like Chart.js</p>
+          </div>
+          <!-- Recent Bookings Activity Table -->
+          <h3 class="text-h3 text-primary mb-md">Recent Bookings</h3>
+          <div class="table-wrapper" id="admin-recent-bookings">
+            <table class="table"><thead><tr><th>Booking ID</th><th>Flight</th><th>Route</th><th>Passengers</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody id="recent-bookings-body"></tbody></table>
+          </div>
+        </div>
+
+        <!-- Flight Management Section -->
+        <div class="admin-section" id="section-flights">
+          <h1 class="admin-page-title">Flight Management</h1>
+          <div class="admin-toolbar">
+            <div class="admin-search"><span class="material-symbols-outlined">search</span><input type="text" placeholder="Search flights..." id="flight-search"></div>
+            <button class="btn btn-primary" id="add-flight-btn"><span class="material-symbols-outlined icon-sm">add</span> Add Flight</button>
+          </div>
+          <div class="table-wrapper" id="flights-table-wrapper">
+            <table class="table"><thead><tr><th>Flight No.</th><th>Airline</th><th>Route</th><th>Time</th><th>Duration</th><th>Price (Eco)</th><th>Seats</th><th>Actions</th></tr></thead>
+            <tbody id="flights-table-body"></tbody></table>
+          </div>
+        </div>
+
+        <!-- Bookings Management Section -->
+        <div class="admin-section" id="section-bookings">
+          <h1 class="admin-page-title">All Bookings</h1>
+          <div class="admin-toolbar">
+            <div class="admin-search"><span class="material-symbols-outlined">search</span><input type="text" placeholder="Search by booking ID..." id="booking-search"></div>
+          </div>
+          <div class="table-wrapper">
+            <table class="table"><thead><tr><th>Booking ID</th><th>Flight</th><th>Route</th><th>Passengers</th><th>Class</th><th>Amount</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody id="bookings-table-body"></tbody></table>
+          </div>
+        </div>
+
+        <!-- User Directory Management Section -->
+        <div class="admin-section" id="section-users">
+          <h1 class="admin-page-title">User Management</h1>
+          <div class="table-wrapper">
+            <table class="table"><thead><tr><th>User ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Role</th><th>Joined</th></tr></thead>
+            <tbody id="users-table-body"></tbody></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/pages/admin.js"></script>
+</body>
+</html>

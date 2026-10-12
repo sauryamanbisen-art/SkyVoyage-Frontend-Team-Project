@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard — SkyVoyage</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/auth-dashboard.css">
+</head>
+<body>
+  <!-- Global Navigation Header -->
+  <header class="navbar">
+    <div class="flex items-center gap-xl"><a href="index.html" class="navbar-brand">SkyVoyage</a><nav class="navbar-links"><a href="index.html">Flights</a><a href="search.html">Search</a><a href="dashboard.html" class="active">Dashboard</a><a href="#">Help</a></nav></div>
+    <div class="navbar-actions"><a href="login.html" class="btn btn-ghost">Sign In</a><a href="register.html" class="btn btn-primary">Get Started</a></div>
+    <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </header>
+  <main class="page-content">
+    <!-- User Welcome Greeting Banner -->
+    <div class="dash-header">
+      <div class="container">
+        <h1 class="text-h1" id="dash-greeting">Welcome back!</h1>
+        <p class="text-small mt-sm" style="opacity:0.7;" id="dash-subtitle">Manage your trips and bookings</p>
+      </div>
+    </div>
+    <div class="container" style="padding-bottom:var(--space-2xl);">
+      <!-- User Account Stats & Metric Cards -->
+      <div class="dash-stats" id="dash-stats">
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon" style="background:rgba(10,37,64,0.1);"><span class="material-symbols-outlined text-primary">flight</span></div>
+          <div class="dash-stat-value" id="stat-total">0</div>
+          <div class="dash-stat-label">Total Bookings</div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon" style="background:rgba(16,185,129,0.1);"><span class="material-symbols-outlined text-success">upcoming</span></div>
+          <div class="dash-stat-value" id="stat-upcoming">0</div>
+          <div class="dash-stat-label">Upcoming Trips</div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon" style="background:rgba(255,107,53,0.1);"><span class="material-symbols-outlined text-accent">paid</span></div>
+          <div class="dash-stat-value" id="stat-spent">₹0</div>
+          <div class="dash-stat-label">Total Spent</div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon" style="background:rgba(59,130,246,0.1);"><span class="material-symbols-outlined text-info">emoji_events</span></div>
+          <div class="dash-stat-value" id="stat-points">0</div>
+          <div class="dash-stat-label">SkyPoints Earned</div>
+        </div>
+      </div>
+      <!-- Trips Status Tabs & Bookings Feed -->
+      <div class="mt-2xl">
+        <!-- Status Filter Tabs -->
+        <div class="dash-tabs" id="dash-tabs">
+          <button class="dash-tab active" data-tab="all">All Bookings</button>
+          <button class="dash-tab" data-tab="upcoming">Upcoming</button>
+          <button class="dash-tab" data-tab="completed">Completed</button>
+          <button class="dash-tab" data-tab="cancelled">Cancelled</button>
+        </div>
+        <!-- Dynamic Bookings List Container -->
+        <div class="dash-bookings-list" id="bookings-list">
+          <div class="loading-overlay"><div class="spinner"></div><p>Loading bookings...</p></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Site Footer -->
+  <footer class="footer"><div class="container-lg"><div class="footer-grid"><div><span class="footer-brand">SkyVoyage</span></div><div><p class="footer-copyright">© 2026 SkyVoyage.</p></div></div></div></footer>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/pages/dashboard.js"></script>
+</body>
+</html>
