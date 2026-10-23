@@ -59,44 +59,44 @@
           </div>
           <form class="search-form" id="search-form">
             <!-- From / To -->
-            <div class="form-group" style="grid-column: span 2;">
-              <label class="form-label">From / To</label>
+            <div class="form-group">
+              <label class="form-label" for="origin-input">From / To</label>
               <div class="search-field-pair">
                 <div class="search-input-wrap">
                   <span class="material-symbols-outlined">flight_takeoff</span>
-                  <input type="text" id="origin-input" placeholder="Delhi (DEL)" list="airports-from" autocomplete="off">
+                  <input type="text" id="origin-input" placeholder="Delhi (DEL)" list="airports-from" autocomplete="off" aria-label="Departure airport or city">
                 </div>
-                <button type="button" class="search-swap-btn" id="swap-btn" title="Swap origin and destination">
+                <button type="button" class="search-swap-btn" id="swap-btn" title="Swap origin and destination" aria-label="Swap departure and arrival">
                   <span class="material-symbols-outlined">swap_horiz</span>
                 </button>
                 <div class="search-input-wrap">
                   <span class="material-symbols-outlined">flight_land</span>
-                  <input type="text" id="destination-input" placeholder="Mumbai (BOM)" list="airports-to" autocomplete="off">
+                  <input type="text" id="destination-input" placeholder="Mumbai (BOM)" list="airports-to" autocomplete="off" aria-label="Arrival airport or city">
                 </div>
               </div>
             </div>
             <!-- Departure -->
             <div class="form-group">
-              <label class="form-label">Departure</label>
+              <label class="form-label" for="departure-date">Departure</label>
               <div class="search-input-wrap">
                 <span class="material-symbols-outlined">calendar_today</span>
-                <input type="date" id="departure-date">
+                <input type="date" id="departure-date" aria-label="Departure date">
               </div>
             </div>
             <!-- Return -->
             <div class="form-group">
-              <label class="form-label">Return</label>
+              <label class="form-label" for="return-date">Return</label>
               <div class="search-input-wrap">
                 <span class="material-symbols-outlined">calendar_today</span>
-                <input type="date" id="return-date">
+                <input type="date" id="return-date" aria-label="Return date">
               </div>
             </div>
             <!-- Passengers & Search -->
             <div class="form-group">
-              <label class="form-label">Passengers & Class</label>
+              <label class="form-label" for="passengers-select">Passengers & Class</label>
               <div class="search-input-wrap passengers-select">
                 <span class="material-symbols-outlined">person</span>
-                <select id="passengers-select" class="form-select" style="border:none;padding:0;height:auto;background-image:none;">
+                <select id="passengers-select" class="form-select" style="border:none;padding:0;height:auto;background-image:none;" aria-label="Passengers and class selection">
                   <option value="1-economy">1, Economy</option>
                   <option value="2-economy">2, Economy</option>
                   <option value="3-economy">3, Economy</option>
@@ -278,8 +278,8 @@
     <section class="section">
       <div class="container-lg">
         <div class="promo-banner">
-          <div class="promo-image hidden" style="display:none;">
-            <!-- Hidden on mobile, decorative on desktop -->
+          <div class="promo-image">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHte9yJMpYFNbm8f5y3QMX6ooi_jAbMgNUicbgJFM48exfpbl7I17IigkUB6ibL-RnWPt2bzGEsPU7a3F-dLyslZtxh06SS4fBatQeW7rfNVL4tj3baYUB2Q-ypQ-i6oY-dfqAcPGNS0W8aHXOn2S6LmlE7F8j2b6BzA71km1Us8R3gB49qw9Bx1M3yYk69cmn_Oo_T2aaQCrTTxElO4Tt5KNmJL61Ntga1NfBvsw_yA5GbArMar1crhcMoA2Ima2TSqCJpQ0QeZS7" alt="Scenic luxury tropical flight destination">
           </div>
           <div class="promo-content">
             <span class="promo-badge">Limited Time Offer</span>
