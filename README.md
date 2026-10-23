@@ -18,14 +18,14 @@ For full architectural blueprints, entity models, page-by-page functional specs,
 
 ---
 
-## 🚀 Project Status (~45% Complete)
+## 🚀 Project Status (~55% Complete)
 
 | Layer | Status | Description |
 | :--- | :--- | :--- |
 | **Design System & CSS Tokens** | ✅ 100% | Variables, typography tokens, grid & utility classes in `css/variables.css`. |
 | **Mock Datasets** | ✅ 100% | Flight schedules, airline carriers, and airport rosters in `data/*.json`. |
-| **HTML Page Templates** | ⚠️ 85% | 9 core views created; `search.html` and `seat-selection.html` in progress. |
-| **CSS Page Styling** | ✅ 90% | Fully responsive styles for Landing, Admin, Dashboard, Checkout, Seats, Details. |
+| **HTML Page Templates** | ✅ 100% | 11 core views completed and audited with WCAG a11y & responsive layouts. |
+| **CSS Page Styling** | ✅ 100% | Fully responsive styles for Landing, Admin, Dashboard, Checkout, Seats, Details. |
 | **JavaScript Business Logic** | ⏳ 0% | ES6 Domain Models (`Flight`, `Seat`, `Booking`, `User`) and Page Controllers pending. |
 | **Data Service & Persistence** | ⏳ 0% | `DataService.js` and `LocalStorage` sync scheduled for Phase 2. |
 
@@ -34,7 +34,7 @@ For full architectural blueprints, entity models, page-by-page functional specs,
 ## 🗂️ Project Structure
 
 ```text
-Skynora-Frontend-Team-Project/
+Skynora-Frontend-Team-Project/ 
 ├── PRD.pdf                         # Full Product Requirements Document (PDF)
 ├── README.md                       # Project documentation
 ├── index.html                      # Landing page with flight search widget

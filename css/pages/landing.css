@@ -104,9 +104,13 @@
 
 .search-form {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2.2fr 1fr 1fr 1.2fr auto;
   gap: var(--space-md);
   align-items: end;
+}
+
+.search-form > .form-group:first-child {
+  grid-column: span 1;
 }
 
 .search-field-pair {
@@ -602,6 +606,10 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .search-form > .form-group:first-child {
+    grid-column: span 2;
+  }
+
   .destinations-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -622,6 +630,10 @@
 
   .search-form {
     grid-template-columns: 1fr;
+  }
+
+  .search-form > .form-group:first-child {
+    grid-column: 1;
   }
 
   .search-field-pair {

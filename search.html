@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Search Results — Skynora</title>
+  <meta name="description" content="Compare and filter scheduled flights across top airlines with real-time pricing, cabin amenities, and flexible fares on Skynora.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/search.css">
+</head>
+<body>
+  <!-- Global Navigation Header -->
+  <header class="navbar">
+    <div class="flex items-center gap-xl">
+      <a href="index.html" class="navbar-brand">Skynora</a>
+      <nav class="navbar-links">
+        <a href="index.html">Flights</a>
+        <a href="search.html" class="active">Search</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#">Help</a>
+      </nav>
+    </div>
+    <div class="navbar-actions">
+      <a href="login.html" class="btn btn-ghost">Sign In</a>
+      <a href="register.html" class="btn btn-primary">Get Started</a>
+    </div>
+    <button class="navbar-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="page-content">
+    <!-- Search Route Header Summary -->
+    <div class="search-page-header">
+      <div class="container">
+        <h1 class="visually-hidden">Flight Search Results</h1>
+        <div class="search-summary">
+          <div class="search-route">
+            <span class="search-route-city">Delhi</span>
+            <span class="search-route-code">(DEL)</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+            <span class="search-route-city">Mumbai</span>
+            <span class="search-route-code">(BOM)</span>
+          </div>
+          <div class="search-meta">
+            <div class="search-meta-item">
+              <span class="material-symbols-outlined icon-sm">calendar_today</span>
+              <span>Departure: Tomorrow</span>
+            </div>
+            <div class="search-meta-item">
+              <span class="material-symbols-outlined icon-sm">person</span>
+              <span>1 Passenger, Economy</span>
+            </div>
+            <div class="search-meta-item">
+              <span class="material-symbols-outlined icon-sm">sync_alt</span>
+              <span>One Way</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Results Layout with Faceted Filters -->
+    <div class="container-lg">
+      <div class="search-layout">
+        <!-- Faceted Filters Sidebar -->
+        <aside class="filters-panel">
+          <div class="filter-section">
+            <div class="filter-title flex justify-between items-center">
+              <span class="flex items-center gap-xs"><span class="material-symbols-outlined icon-sm">tune</span> Filters</span>
+              <button type="button" class="filter-clear" id="reset-filters-btn">Reset</button>
+            </div>
+          </div>
+
+          <!-- Stops Filter -->
+          <div class="filter-section">
+            <h3 class="filter-title">Stops</h3>
+            <div class="filter-option">
+              <input type="checkbox" id="stop-nonstop" checked>
+              <label for="stop-nonstop">Non-stop</label>
+              <span class="filter-count">(4)</span>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="stop-1stop">
+              <label for="stop-1stop">1 Stop</label>
+              <span class="filter-count">(2)</span>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="stop-2plus">
+              <label for="stop-2plus">2+ Stops</label>
+              <span class="filter-count">(0)</span>
+            </div>
+          </div>
+
+          <!-- Airlines Filter -->
+          <div class="filter-section">
+            <h3 class="filter-title">Airlines</h3>
+            <div class="filter-option">
+              <input type="checkbox" id="airline-ai" checked>
+              <label for="airline-ai">Air India (AI)</label>
+              <span class="filter-count">(2)</span>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="airline-6e" checked>
+              <label for="airline-6e">IndiGo (6E)</label>
+              <span class="filter-count">(2)</span>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="airline-uk" checked>
+              <label for="airline-uk">Vistara (UK)</label>
+              <span class="filter-count">(1)</span>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="airline-ek" checked>
+              <label for="airline-ek">Emirates (EK)</label>
+              <span class="filter-count">(1)</span>
+            </div>
+          </div>
+
+          <!-- Price Range Slider -->
+          <div class="filter-section">
+            <h3 class="filter-title">Max Price</h3>
+            <input type="range" id="price-range" min="3000" max="25000" step="500" value="20000" aria-label="Max flight price filter">
+            <div class="price-range-display">
+              <span>₹3,000</span>
+              <span id="price-val">₹20,000</span>
+            </div>
+          </div>
+
+          <!-- Departure Time Slots -->
+          <div class="filter-section">
+            <h3 class="filter-title">Departure Time</h3>
+            <div class="filter-option">
+              <input type="checkbox" id="dep-morning" checked>
+              <label for="dep-morning">Morning (6 AM - 12 PM)</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="dep-afternoon">
+              <label for="dep-afternoon">Afternoon (12 PM - 6 PM)</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="dep-evening">
+              <label for="dep-evening">Evening (After 6 PM)</label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Flight Results List -->
+        <section class="results-area">
+          <div class="results-header">
+            <p class="results-count">Showing <strong id="flight-count">4</strong> available flights</p>
+            <div class="sort-controls">
+              <label for="sort-select">Sort by:</label>
+              <select class="sort-select" id="sort-select">
+                <option value="cheapest">Cheapest First</option>
+                <option value="duration">Fastest Duration</option>
+                <option value="earliest">Earliest Departure</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dynamic Flights Container -->
+          <div id="flights-container">
+            <!-- Flight Card 1: Air India AI-302 -->
+            <article class="flight-card" data-id="FL001">
+              <div class="flight-card-top">
+                <div class="flight-airline">
+                  <div class="flight-airline-logo">✈️</div>
+                  <div>
+                    <h4 class="flight-airline-name">Air India</h4>
+                    <p class="flight-airline-number">AI-302 • Boeing 787</p>
+                  </div>
+                </div>
+                <div class="flight-price-section">
+                  <p class="flight-price">₹4,500</p>
+                  <p class="flight-price-label">per passenger (Eco)</p>
+                </div>
+              </div>
+              <div class="flight-card-middle">
+                <div class="flight-time-block">
+                  <p class="flight-time">06:00</p>
+                  <p class="flight-city-code">DEL (Delhi)</p>
+                </div>
+                <div class="flight-duration-block">
+                  <div class="flight-duration-line">
+                    <span class="material-symbols-outlined">flight</span>
+                  </div>
+                  <p class="flight-duration-text">2h 15m</p>
+                  <p class="flight-stops nonstop">Non-stop</p>
+                </div>
+                <div class="flight-time-block">
+                  <p class="flight-time">08:15</p>
+                  <p class="flight-city-code">BOM (Mumbai)</p>
+                </div>
+              </div>
+              <div class="flight-card-bottom">
+                <div class="flight-amenities">
+                  <span class="material-symbols-outlined" title="In-flight Wi-Fi">wifi</span>
+                  <span class="material-symbols-outlined" title="Complimentary Meals">restaurant</span>
+                  <span class="material-symbols-outlined" title="Seatback Entertainment">tv</span>
+                  <span class="material-symbols-outlined" title="USB Power Outlet">power</span>
+                </div>
+                <span class="flight-seats-left">45 seats remaining</span>
+                <div class="flex gap-sm">
+                  <a href="flight-details.html?id=FL001" class="btn btn-outline btn-sm">Details</a>
+                  <a href="seat-selection.html?flight=FL001" class="flight-select-btn">Select Seats</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Flight Card 2: IndiGo 6E-201 -->
+            <article class="flight-card" data-id="FL002">
+              <div class="flight-card-top">
+                <div class="flight-airline">
+                  <div class="flight-airline-logo">🛫</div>
+                  <div>
+                    <h4 class="flight-airline-name">IndiGo</h4>
+                    <p class="flight-airline-number">6E-201 • Airbus A320</p>
+                  </div>
+                </div>
+                <div class="flight-price-section">
+                  <p class="flight-price">₹3,200</p>
+                  <p class="flight-price-label">per passenger (Eco)</p>
+                </div>
+              </div>
+              <div class="flight-card-middle">
+                <div class="flight-time-block">
+                  <p class="flight-time">08:30</p>
+                  <p class="flight-city-code">DEL (Delhi)</p>
+                </div>
+                <div class="flight-duration-block">
+                  <div class="flight-duration-line">
+                    <span class="material-symbols-outlined">flight</span>
+                  </div>
+                  <p class="flight-duration-text">2h 20m</p>
+                  <p class="flight-stops nonstop">Non-stop</p>
+                </div>
+                <div class="flight-time-block">
+                  <p class="flight-time">10:50</p>
+                  <p class="flight-city-code">BOM (Mumbai)</p>
+                </div>
+              </div>
+              <div class="flight-card-bottom">
+                <div class="flight-amenities">
+                  <span class="material-symbols-outlined" title="USB Power Outlet">power</span>
+                </div>
+                <span class="flight-seats-left">30 seats remaining</span>
+                <div class="flex gap-sm">
+                  <a href="flight-details.html?id=FL002" class="btn btn-outline btn-sm">Details</a>
+                  <a href="seat-selection.html?flight=FL002" class="flight-select-btn">Select Seats</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Flight Card 3: Vistara UK-945 -->
+            <article class="flight-card" data-id="FL003">
+              <div class="flight-card-top">
+                <div class="flight-airline">
+                  <div class="flight-airline-logo">✈️</div>
+                  <div>
+                    <h4 class="flight-airline-name">Vistara</h4>
+                    <p class="flight-airline-number">UK-945 • Boeing 737-800</p>
+                  </div>
+                </div>
+                <div class="flight-price-section">
+                  <p class="flight-price">₹5,200</p>
+                  <p class="flight-price-label">per passenger (Eco)</p>
+                </div>
+              </div>
+              <div class="flight-card-middle">
+                <div class="flight-time-block">
+                  <p class="flight-time">07:15</p>
+                  <p class="flight-city-code">DEL (Delhi)</p>
+                </div>
+                <div class="flight-duration-block">
+                  <div class="flight-duration-line">
+                    <span class="material-symbols-outlined">flight</span>
+                  </div>
+                  <p class="flight-duration-text">2h 45m</p>
+                  <p class="flight-stops nonstop">Non-stop</p>
+                </div>
+                <div class="flight-time-block">
+                  <p class="flight-time">10:00</p>
+                  <p class="flight-city-code">BOM (Mumbai)</p>
+                </div>
+              </div>
+              <div class="flight-card-bottom">
+                <div class="flight-amenities">
+                  <span class="material-symbols-outlined" title="In-flight Wi-Fi">wifi</span>
+                  <span class="material-symbols-outlined" title="Complimentary Meals">restaurant</span>
+                  <span class="material-symbols-outlined" title="Seatback Entertainment">tv</span>
+                  <span class="material-symbols-outlined" title="USB Power Outlet">power</span>
+                </div>
+                <span class="flight-seats-left">52 seats remaining</span>
+                <div class="flex gap-sm">
+                  <a href="flight-details.html?id=FL003" class="btn btn-outline btn-sm">Details</a>
+                  <a href="seat-selection.html?flight=FL003" class="flight-select-btn">Select Seats</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Flight Card 4: Emirates EK-507 -->
+            <article class="flight-card" data-id="FL004">
+              <div class="flight-card-top">
+                <div class="flight-airline">
+                  <div class="flight-airline-logo">✨</div>
+                  <div>
+                    <h4 class="flight-airline-name">Emirates</h4>
+                    <p class="flight-airline-number">EK-507 • Airbus A380</p>
+                  </div>
+                </div>
+                <div class="flight-price-section">
+                  <p class="flight-price">₹15,000</p>
+                  <p class="flight-price-label">per passenger (Eco)</p>
+                </div>
+              </div>
+              <div class="flight-card-middle">
+                <div class="flight-time-block">
+                  <p class="flight-time">02:30</p>
+                  <p class="flight-city-code">DEL (Delhi)</p>
+                </div>
+                <div class="flight-duration-block">
+                  <div class="flight-duration-line">
+                    <span class="material-symbols-outlined">flight</span>
+                  </div>
+                  <p class="flight-duration-text">3h 45m</p>
+                  <p class="flight-stops nonstop">Non-stop</p>
+                </div>
+                <div class="flight-time-block">
+                  <p class="flight-time">04:45</p>
+                  <p class="flight-city-code">BOM (Mumbai)</p>
+                </div>
+              </div>
+              <div class="flight-card-bottom">
+                <div class="flight-amenities">
+                  <span class="material-symbols-outlined" title="High-Speed Wi-Fi">wifi</span>
+                  <span class="material-symbols-outlined" title="Gourmet Dining">restaurant</span>
+                  <span class="material-symbols-outlined" title="ICE Entertainment">tv</span>
+                  <span class="material-symbols-outlined" title="USB Power">power</span>
+                </div>
+                <span class="flight-seats-left">78 seats remaining</span>
+                <div class="flex gap-sm">
+                  <a href="flight-details.html?id=FL004" class="btn btn-outline btn-sm">Details</a>
+                  <a href="seat-selection.html?flight=FL004" class="flight-select-btn">Select Seats</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="footer">
+    <div class="container-lg">
+      <div class="footer-grid">
+        <div>
+          <span class="footer-brand">Skynora</span>
+          <p class="footer-desc">Your trusted partner for effortless global travel. We make booking flights, hotels, and experiences faster and more secure.</p>
+        </div>
+        <div>
+          <h5 class="footer-title">Company</h5>
+          <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-title">Support</h5>
+          <div class="footer-links">
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-title">Payment Methods</h5>
+          <div class="flex gap-sm" style="opacity:0.7;">
+            <span class="material-symbols-outlined" title="Credit Card">credit_card</span>
+            <span class="material-symbols-outlined" title="Secure Payment">lock</span>
+            <span class="material-symbols-outlined" title="Universal Pay">account_balance_wallet</span>
+          </div>
+          <p class="footer-copyright">© 2026 Skynora. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/pages/search.js"></script>
+</body>
+</html>

@@ -133,6 +133,12 @@
   background: rgba(0, 210, 253, 0.05);
 }
 
+.seat:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  z-index: 2;
+}
+
 .seat.selected {
   background: var(--color-secondary-container);
   border-color: var(--color-secondary);

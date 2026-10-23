@@ -349,3 +349,54 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.payment-method:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Print styles for E-Ticket */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .navbar,
+  .footer,
+  .btn,
+  .booking-flow-header,
+  .success-icon {
+    display: none !important;
+  }
+
+  .page-content {
+    padding-top: 0 !important;
+    min-height: auto !important;
+  }
+
+  .ticket-wrapper {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ticket-card {
+    box-shadow: none !important;
+    border: 2px solid #000 !important;
+    page-break-inside: avoid;
+  }
+
+  .ticket-header {
+    background: var(--color-primary) !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .ticket-footer {
+    background: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
